@@ -44,7 +44,6 @@ if (strlen($_SESSION['alogin'])==0) {
                             <th>Title</th>
                             <th>Image</th>
                             <th>Skill Creation Date</th>
-                            <th>Last Updated Date</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -62,8 +61,6 @@ if (strlen($_SESSION['alogin'])==0) {
                                         class="file-logo" alt="<?php echo htmlentities($row['image']); ?>" />
                                 </td>
                                 <td> <?php echo htmlentities($row['creationDate']); ?>
-                                </td>
-                                <td><?php echo htmlentities($row['updationDate']); ?>
                                 </td>
                                 <td>
                                     <a href="edit-skills.php?id=<?php echo $row['id']?>&location=skills"><i class="fa fa-edit"></i></a>

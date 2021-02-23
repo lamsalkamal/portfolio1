@@ -47,7 +47,6 @@ if (strlen($_SESSION['alogin'])==0) {
                             <th>Image</th>
                             <th>Highlighted</th>
                             <th>Projects Creation Date</th>
-                            <th>Last Updated Date</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -78,8 +77,6 @@ if (strlen($_SESSION['alogin'])==0) {
                                             : '<span class="bg-danger rounded-pill text-light p-1">Inactive</span>'; ?>
                                 </td>
                                 <td> <?php echo htmlentities($row['creationDate']); ?>
-                                </td>
-                                <td><?php echo htmlentities($row['updationDate']); ?>
                                 </td>
                                 <td>
                                     <a href="edit-projects.php?id=<?php echo $row['id']?>&location=projects"><i class="fa fa-edit"></i></a>
