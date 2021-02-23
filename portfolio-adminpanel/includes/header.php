@@ -25,4 +25,3 @@
     <script type="text/javascript" src="./js/password-check.js"></script>
 </head>
 <body class="jp-admin-panel">
-<?php include '../includes/details-fetch.php'; ?>
