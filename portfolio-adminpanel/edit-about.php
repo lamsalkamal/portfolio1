@@ -4,8 +4,6 @@ include '../function/config.php';
 if (strlen($_SESSION['alogin'])==0) {
     header('location:index.php');
 } else {
-    date_default_timezone_set('Europe/Helsinki');// change according timezone
-    $currentTime = date('Y-d-m h:i:s', time());
     $_SESSION['about-update-msg']="";
     $_SESSION['msgclass']="";
     $pid=intval($_GET['id']);
@@ -13,7 +11,7 @@ if (strlen($_SESSION['alogin'])==0) {
         $title = $_POST['title'];
         $description = $_POST['description'];
    
-        $query = "UPDATE about SET title='$title',description='$description',updationDate='$currentTime' WHERE id='$pid'";
+        $query = "UPDATE about SET title='$title',description='$description' WHERE id='$pid'";
         $sql=mysqli_query($conn, $query);
         if($sql) {
             $_SESSION['about-update-msg']="About Section Updated Successfully !!";

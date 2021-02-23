@@ -4,8 +4,6 @@ include '../function/config.php';
 if (strlen($_SESSION['alogin'])==0) {
     header('location:index.php');
 } else {
-    date_default_timezone_set('Europe/Helsinki');// change according timezone
-    $currentTime = date('Y-d-m h:i:s', time());
     $_SESSION['project-create-msg']="";
     $_SESSION['msgclass']="";
 
@@ -21,7 +19,7 @@ if (strlen($_SESSION['alogin'])==0) {
         move_uploaded_file($tmp_name, $path);
         $project_url = $_POST['project_url'];
    
-        $query = "INSERT INTO projects(title,sub_title,image,highlighted,project_url,updationDate) VALUES ('$title','$sub_title','$unique_image_name','$highlighted','$project_url','$currentTime')";
+        $query = "INSERT INTO projects(title,sub_title,image,highlighted,project_url,updationDate) VALUES ('$title','$sub_title','$unique_image_name','$highlighted','$project_url')";
         $sql=mysqli_query($conn, $query);
         if($sql) {
             $_SESSION['project-create-msg']="Project Section Added !!";

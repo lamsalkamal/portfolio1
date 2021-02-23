@@ -4,8 +4,6 @@ include '../function/config.php';
 if (strlen($_SESSION['alogin'])==0) {
     header('location:index.php');
 } else {
-    date_default_timezone_set('Europe/Helsinki');// change according timezone
-    $currentTime = date('Y-d-m h:i:s', time());
     $_SESSION['hobby-create-msg']="";
     $_SESSION['msgclass']="";
 
@@ -18,7 +16,7 @@ if (strlen($_SESSION['alogin'])==0) {
         $path = "../uploads/hobbies-image/".$unique_image_name;
         move_uploaded_file($tmp_name, $path);
    
-        $query = "INSERT INTO hobbies(title,image,updationDate) VALUES ('$title','$unique_image_name','$currentTime')";
+        $query = "INSERT INTO hobbies(title,image) VALUES ('$title','$unique_image_name')";
         $sql=mysqli_query($conn, $query);
         if($sql) {
             $_SESSION['hobby-create-msg']="Hobby Section Added !!";

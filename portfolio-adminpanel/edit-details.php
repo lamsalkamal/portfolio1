@@ -4,8 +4,6 @@ include '../function/config.php';
 if (strlen($_SESSION['alogin'])==0) {
     header('location:index.php');
 } else {
-    date_default_timezone_set('Europe/Helsinki');// change according timezone
-    $currentTime = date('Y-d-m h:i:s', time());
     $_SESSION['details-update-msg']="";
     $_SESSION['msgclass']="";
     $pid=intval($_GET['id']);
@@ -19,7 +17,7 @@ if (strlen($_SESSION['alogin'])==0) {
         $developed_by = $_POST['developed_by'];
         $developed_by_url = $_POST['developed_by_url'];
    
-        $query = "UPDATE details SET email='$email',address='$address',phone='$phone',mobile='$mobile',designed_by='$designed_by',designed_by_url='$designed_by_url',developed_by='$developed_by',developed_by_url='$developed_by_url',updationDate='$currentTime' WHERE id='$pid'";
+        $query = "UPDATE details SET email='$email',address='$address',phone='$phone',mobile='$mobile',designed_by='$designed_by',designed_by_url='$designed_by_url',developed_by='$developed_by',developed_by_url='$developed_by_url' WHERE id='$pid'";
         $sql=mysqli_query($conn, $query);
         if($sql) {
             $_SESSION['details-update-msg']="Details Section Updated Successfully !!";

@@ -4,8 +4,6 @@ include '../function/config.php';
 if (strlen($_SESSION['alogin'])==0) {
     header('location:index.php');
 } else {
-    date_default_timezone_set('Europe/Helsinki');// change according timezone
-    $currentTime = date('Y-d-m h:i:s', time());
     $_SESSION['project-image-create-msg']="";
     $_SESSION['msgclass']="";
 

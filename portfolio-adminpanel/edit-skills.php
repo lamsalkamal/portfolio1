@@ -4,15 +4,13 @@ include '../function/config.php';
 if (strlen($_SESSION['alogin'])==0) {
     header('location:index.php');
 } else {
-    date_default_timezone_set('Europe/Helsinki');// change according timezone
-    $currentTime = date('Y-d-m h:i:s', time());
     $_SESSION['skills-update-msg']="";
     $_SESSION['msgclass']="";
     $pid=intval($_GET['id']);
     if (isset($_POST['edit-skills'])) {
         $title = $_POST['title'];
    
-        $query = "UPDATE skills SET title='$title',updationDate='$currentTime' WHERE id='$pid'";
+        $query = "UPDATE skills SET title='$title' WHERE id='$pid'";
         $sql=mysqli_query($conn, $query);
         if($sql) {
             $_SESSION['skills-update-msg']="Skills Section Updated Successfully !!";

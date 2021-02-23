@@ -4,8 +4,6 @@ include '../function/config.php';
 if (strlen($_SESSION['alogin'])==0) {
     header('location:index.php');
 } else {
-    date_default_timezone_set('Europe/Helsinki');// change according timezone
-    $currentTime = date('Y-d-m h:i:s', time());
     $_SESSION['about-create-msg']="";
     $_SESSION['msgclass']="";
 
@@ -19,7 +17,7 @@ if (strlen($_SESSION['alogin'])==0) {
         $path = "../uploads/about-image/".$unique_image_name;
         move_uploaded_file($tmp_name, $path);
    
-        $query = "INSERT INTO about(title,description,image,updationDate) VALUES ('$title','$description','$unique_image_name','$currentTime')";
+        $query = "INSERT INTO about(title,description,image) VALUES ('$title','$description','$unique_image_name')";
         $sql=mysqli_query($conn, $query);
         if($sql) {
             $_SESSION['about-create-msg']="About Section Added !!";

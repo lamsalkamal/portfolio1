@@ -4,8 +4,6 @@ include '../function/config.php';
 if (strlen($_SESSION['alogin'])==0) {
     header('location:index.php');
 } else {
-    date_default_timezone_set('Europe/Helsinki');// change according timezone
-    $currentTime = date('Y-d-m h:i:s', time());
     $_SESSION['projects-update-msg']="";
     $_SESSION['msgclass']="";
     $pid=intval($_GET['id']);
@@ -15,7 +13,7 @@ if (strlen($_SESSION['alogin'])==0) {
         $sub_title = $_POST['sub_title'];
         $highlighted = $_POST['highlighted'];
    
-        $query = "UPDATE projects SET title='$title', project_url='$project_url', sub_title='$sub_title', highlighted='$highlighted',updationDate='$currentTime' WHERE id='$pid'";
+        $query = "UPDATE projects SET title='$title', project_url='$project_url', sub_title='$sub_title', highlighted='$highlighted' WHERE id='$pid'";
         $sql=mysqli_query($conn, $query);
         if($sql) {
             $_SESSION['projects-update-msg']="Projects Section Updated Successfully !!";
