@@ -10,6 +10,7 @@
 </head>
 <body>
 
+
 <section id="home">
 	<div class="image-container" style="background-image: url('uploads/home_page-image/<?php echo htmlentities($homeImage); ?>');">
 		<div class="image-overlay"></div>
@@ -27,6 +28,13 @@
 	</div>
 </section>
 
-
-</body>
-</html>
+<?php 
+	include 'portfolio.php';
+	include 'skill.php';
+	include 'about.php';
+	include 'hobby.php'; 
+	include 'contact.php';
+?>
+<?php
+	include './includes/footer.php';
+?>
