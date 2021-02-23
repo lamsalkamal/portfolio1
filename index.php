@@ -9,7 +9,7 @@
 	<title></title>
 </head>
 <body>
-
+<?php include '/includes/navbar.php'; ?>
 
 <section id="home">
 	<div class="image-container" style="background-image: url('uploads/home_page-image/<?php echo htmlentities($homeImage); ?>');">
@@ -29,9 +29,12 @@
 </section>
 
 <?php 
-	include 'portfolio.php';
-	include 'skill.php';
-	include 'about.php';
+	include('portfolio.php');
+?><?php
+	include('/skill.php');
+?>
+<?php
+	include('about.php');
 	include 'hobby.php'; 
 	include 'contact.php';
 ?>
