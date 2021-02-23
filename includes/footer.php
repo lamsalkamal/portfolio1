@@ -69,7 +69,7 @@
                     <?php }
                 ?>
             </span>
-            <span><hr/>A.R.Bhatta &copy; <?php echo date('Y'); ?>.</span>
+            <span><hr/>Kamal Lamsal &copy; <?php echo date('Y'); ?>.</span>
         </div>
     </div>
 </footer>
