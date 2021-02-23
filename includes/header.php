@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
+
 	<title><?php echo (isset($pageTitle) ? 'Kamal Lamsal - '.$pageTitle : 'Kamal Lamsal'); ?></title>
 	<meta charset="utf-8" />
     <link rel="icon" href="../assets/images/logo.png" />
