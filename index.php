@@ -2,8 +2,8 @@
 	session_start();
 	error_reporting(0);
 	include './function/config.php';
-	include './includes/header.php';
-	include './includes/navbar.php';
+	include 'includes/header.php';
+	include 'includes/navbar.php';
 ?>
 
 <section id="home">
