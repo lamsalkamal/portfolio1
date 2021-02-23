@@ -94,3 +94,6 @@ $(document).ready(function() {
         window.open($url, '_self');
     }
 </script>
+</body>
+
+</html>

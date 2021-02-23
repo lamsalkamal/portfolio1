@@ -36,5 +36,5 @@
 	include 'contact.php';
 ?>
 <?php
-	include './includes/footer.php';
+	include '/includes/footer.php';
 ?>
