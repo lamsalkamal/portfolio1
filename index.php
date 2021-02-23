@@ -1,12 +1,14 @@
 <?php 
 	session_start();
+	error_reporting(0);
+	include './function/config.php';
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<?php include './includes/header.php';
-	include './includes/navbar.php';
-?>
+	<title></title>
+</head>
+<body>
 
 <section id="home">
 	<div class="image-container" style="background-image: url('uploads/home_page-image/<?php echo htmlentities($homeImage); ?>');">
@@ -25,16 +27,6 @@
 	</div>
 </section>
 
-<?php 
-	include 'portfolio.php';
-	include 'skill.php';
-	include 'about.php';
-	include 'hobby.php'; 
-	include 'contact.php';
-?>
-<?php
-	include './includes/footer.php';
-?>
-</body>
 
+</body>
 </html>
